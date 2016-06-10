@@ -7,13 +7,13 @@ if (!defined('TYPO3_MODE')) {
 	'Schmutt.' . $_EXTKEY,
 	'Shop',
 	array(
-		'Product' => 'list, show, new, create, edit, update, delete, filter',
+		'Product' => 'list, show, new, create, edit, update, delete, filter, addToCart',
 		'Order' => 'list, show, new, create, edit, update, delete, submit',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Product' => 'list, show, new, create, update, delete, filter ',
+		'Product' => 'list, show, new, create, update, delete, filter, addToCart ',
 		'Order' => 'list, show, new, create, edit, update, delete, submit ',
 		
 	)

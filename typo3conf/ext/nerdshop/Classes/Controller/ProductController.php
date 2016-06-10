@@ -39,6 +39,14 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @inject
      */
     protected $productRepository = NULL;
+
+    /**
+     * orderRepository
+     *
+     * @var \Schmutt\Nerdshop\Domain\Repository\OrderRepository
+     * @inject
+     */
+    protected $orderRepository = NULL;
     
     /**
      * action list
@@ -61,7 +69,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         $this->view->assign('product', $product);
     }
-    
+
     /**
      * action new
      *
@@ -69,9 +77,9 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function newAction()
     {
-        
+
     }
-    
+
     /**
      * action create
      *
@@ -84,7 +92,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->productRepository->add($newProduct);
         $this->redirect('list');
     }
-    
+
     /**
      * action edit
      *
@@ -96,7 +104,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         $this->view->assign('product', $product);
     }
-    
+
     /**
      * action update
      *
@@ -109,7 +117,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->productRepository->update($product);
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
      *
@@ -122,7 +130,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->productRepository->remove($product);
         $this->redirect('list');
     }
-    
+
     /**
      * action filter
      *
@@ -130,7 +138,38 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function filterAction()
     {
-        
+
+    }
+
+    /**
+     * Add a product to Cart
+     * @param \Schmutt\Nerdshop\Domain\Model\Product $product
+     * @return void
+     */
+    public function addToCartAction(\Schmutt\Nerdshop\Domain\Model\Product $product) {
+
+        $orderNumber = $GLOBALS["TSFE"]->fe_user->getKey("ses","nerdshopOrderNumber");
+        if (strlen($orderNumber) > 0) {
+            $order = $this->orderRepository->findOneByOrderNumber($orderNumber);
+
+        }
+
+        if (!$order) {
+            $order = $this->objectManager->get('Schmutt\\Nerdshop\\Domain\\Model\\Order');
+            $this->orderRepository->add($order);
+            $orderNumberNew = 'AS-2016-' . time();
+            $order->setOrderNumber($orderNumberNew);
+            $GLOBALS['TSFE']->fe_user->setKey("ses","nerdshopOrderNumber",$orderNumberNew);
+        }
+
+        if ($order) {
+            $order->addProduct($product);
+        } else {
+            $this->addFlashMessage('Could not create a new Order', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        }
+
+
+
     }
 
 }
