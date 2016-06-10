@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-10T15:30:15Z" product-name="nerdshop">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="order_number.description">
+				<source>orderNumber</source>
+			</trans-unit>
+			<trans-unit id="products.description">
+				<source>products</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

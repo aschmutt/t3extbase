@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-10T15:30:15Z" product-name="nerdshop">
+		<header/>
+		<body>
+			<trans-unit id="tx_nerdshop_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_product.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_product.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_product.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_product.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_order">
+				<source>Order</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_order.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_order.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_order.order_number">
+				<source>Order Number</source>
+			</trans-unit>
+			<trans-unit id="tx_nerdshop_domain_model_order.products">
+				<source>Products</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

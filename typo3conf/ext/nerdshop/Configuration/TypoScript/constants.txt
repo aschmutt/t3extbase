@@ -1,0 +1,15 @@
+
+plugin.tx_nerdshop_shop {
+	view {
+		# cat=plugin.tx_nerdshop_shop/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:nerdshop/Resources/Private/Templates/
+		# cat=plugin.tx_nerdshop_shop/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:nerdshop/Resources/Private/Partials/
+		# cat=plugin.tx_nerdshop_shop/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:nerdshop/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_nerdshop_shop//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
