@@ -1,0 +1,27 @@
+<f:layout name="DefaultLayout" />
+<f:section name="header">
+	<header class="topheader">
+		<f:cObject typoscriptObjectPath="lib.header"/>
+	</header>
+</f:section>
+<f:section name="content">
+	<div class="navbar navbar-default">
+		<div class="container">
+			<f:render partial="HorizontalMenu"/>
+		</div>
+	</div>
+    <f:render partial="rootline"/>
+	<!-- Begin page content -->
+	<div class="content container">
+        <!--TYPO3SEARCH_begin-->
+        <f:format.raw>{content1}</f:format.raw>
+		<div class="row">
+			<div class="col-md-8">
+				<f:format.raw>{content0}</f:format.raw>&nbsp;
+			</div>
+			<aside class="col-md-4">
+				<f:format.raw>{content2}</f:format.raw></aside>
+		</div>
+        <!--TYPO3SEARCH_end-->
+    </div>
+</f:section>

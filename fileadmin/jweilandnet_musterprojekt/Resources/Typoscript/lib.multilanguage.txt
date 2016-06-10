@@ -1,0 +1,11 @@
+#####Language ID must also be defined in realURL configuration####
+
+## ID of the languages, defined on Root(id = 0)
+deutschId = 0
+englishId = 1
+#extraId = 2
+
+## Name of languages, shown in link
+nameLang0 = DE
+nameLang1 = EN
+#nameLang2 = Extra Language Name

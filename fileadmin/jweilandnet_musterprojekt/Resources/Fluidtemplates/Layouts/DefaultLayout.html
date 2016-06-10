@@ -1,0 +1,13 @@
+<div id="wrap">
+	<div class="headerservice container hidden-print">
+		<div class="row">
+			<f:if condition="{languageMenu}==1">
+				<f:render partial="Language" />
+			</f:if>
+			<f:render partial="Search" arguments="{languageMenu:languageMenu}"/>
+		</div>
+	</div>
+	<f:render section="header" />
+	<f:render section="content" />
+</div>
+<f:render partial="footer" />

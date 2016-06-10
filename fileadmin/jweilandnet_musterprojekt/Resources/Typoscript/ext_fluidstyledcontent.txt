@@ -1,0 +1,2 @@
+styles.content.textmedia.maxW = 1140
+styles.content.defaultHeaderType = 1
