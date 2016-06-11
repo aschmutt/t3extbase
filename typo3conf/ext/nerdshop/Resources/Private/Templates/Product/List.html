@@ -17,7 +17,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
-<table  class="tx_nerdshop" >
+
+
+<table  class="ce-table" >
 	<tr>
 		<th><f:translate key="tx_nerdshop_domain_model_product.title" /></th>
 		<th><f:translate key="tx_nerdshop_domain_model_product.description" /></th>
@@ -30,14 +32,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{products}" as="product">
 		<tr>
 			<td><f:link.action action="show" arguments="{product : product}"> {product.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.image.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{product : product}"> {product.price}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{product : product}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{product : product}">Delete</f:link.action></td>
+			<td><f:format.html>{product.description}</f:format.html></td>
+			<td><f:image src="{product.image.originalResource.publicUrl}" width="100"/></td>
+			<td>{product.price}</td>
+			<td><f:link.action class="btn btn-default" action="edit" arguments="{product : product}">Edit</f:link.action></td>
+			<td><f:link.action class="btn btn-default" action="delete" arguments="{product : product}">Delete</f:link.action></td>
 		</tr>
 	</f:for>
 </table>
 
-<f:link.action action="new">New Product</f:link.action>
+<f:link.action class="btn btn-primary" action="new">New Product</f:link.action>
 </f:section>

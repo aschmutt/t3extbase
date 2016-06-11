@@ -1,3 +1,5 @@
-.tx-nerdshop {
-    border: 1px dashed blue;
+.tx-nerdshop a {
+    color: #cfd1ff;
+    font-weight:bold;
+    text-decoration: none;
 }
