@@ -5,7 +5,7 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Schmutt.' . $_EXTKEY,
-	'Shop',
+	'Nerdshop',
 	array(
 		'Product' => 'list, show, new, create, edit, update, delete, filter, addToCart',
 		'Order' => 'list, show, new, create, edit, update, delete, submit',
